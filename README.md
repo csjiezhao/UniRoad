@@ -138,13 +138,37 @@ embs/
 └─ mobility/<src_id>__to__<city>/z.npy
 ```
 
-## Downstream Evaluation
+## Downstream Evaluation (Final Fused Embedding Only)
+
+After three-view readout and fusion, use the unified embedding for all four tasks:
+
+- `Road type classification`
+- `Road speed inference`
+- `Trajectory travel time estimation`
+- `Trajectory similarity search`
+
+Single-city evaluation example:
 
 ```bash
-python scripts/eval_structure.py --city chengdu --emb-path embs/structure/joint4__to__chengdu/z.npy --data-root data --device cuda
-python scripts/eval_mobility.py --city chengdu --emb-path embs/mobility/joint4__to__chengdu/z.npy --data-root data --device cuda
-python scripts/eval_profile.py  --city chengdu --emb-path embs/profile/chengdu/z.npy --data-root data --device cuda
-python scripts/eval_structure.py --city chengdu --emb-path embs/fusion/joint4__to__chengdu/z.npy --data-root data --device cuda
+python scripts/eval_structure.py \
+  --city chengdu \
+  --emb-path embs/fusion/joint4__to__chengdu/z.npy \
+  --data-root data \
+  --device cuda \
+  --traj-task both
+```
+
+Evaluate all four cities after joint training:
+
+```bash
+for city in chengdu porto rome sanfran; do
+  python scripts/eval_structure.py \
+    --city ${city} \
+    --emb-path embs/fusion/joint4__to__${city}/z.npy \
+    --data-root data \
+    --device cuda \
+    --traj-task both
+done
 ```
 
 ## Reproducibility Notes
