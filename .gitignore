@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Env
+.env
+.venv/
+
+# Runtime outputs
+data/
+data_release.tar.zst
+ckpts/
+embs/
+analysis_vis/
+analysis_vis_mpl/
+
+# OS / IDE
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+uniroad/
