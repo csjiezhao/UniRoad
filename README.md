@@ -44,7 +44,7 @@ Supported cities in current experiments: `chengdu`, `porto`, `rome`, `sanfran`.
 
 The dataset is large and is not suitable for GitHub hosting. It is distributed via external cloud storage.
 
-- Google Cloud download link: `<TO_BE_FILLED_BY_AUTHOR>`
+- Google Drive download link: [data_release.tar.zst](https://drive.google.com/file/d/18EoVn9Ll5oZHhF4bXk8Mec2ax9vH_p0P/view?usp=sharing)
 - Suggested package name: `data_release.tar.zst`
 
 Download and extract:
@@ -152,3 +152,4 @@ python scripts/eval_structure.py --city chengdu --emb-path embs/fusion/joint4__t
 - Keep fixed seeds in train/eval scripts.
 - Structure and mobility encoders are self-supervised (no road labels in encoder loss).
 - City caches are generated in `data/<city>/cache/`.
+
