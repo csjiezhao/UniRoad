@@ -1,6 +1,6 @@
 # UniRoad
 
-Unifying Road Representations Across Cities and Tasks.
+:sparkles: This repo is the official implementation of our paper published in **CIKM 2026 Full Research Track**
 
 ![UniRoad Framework](./UniRoad_overview.png)
 
